@@ -1,10 +1,10 @@
 import React from "react";
 
-const Logo = ({ color }) => {
+const Logo = ({ color, width }) => {
   return (
     <>
       <svg
-        width="111"
+        width={width || 111}
         height="36"
         viewBox="0 0 111 36"
         fill="none"

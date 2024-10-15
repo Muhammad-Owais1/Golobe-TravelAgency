@@ -3,3 +3,8 @@ export { default as Plane } from "./plane";
 export { default as SwapArrow } from "./swap-arrow.png";
 export { default as DropArrow } from "./drop-arrow.png";
 export { default as PaperPlane } from "./paper-plane.png";
+export { default as FacebookIcon } from "./facebook-icon.png";
+export { default as TwitterIcon } from "./twitter-icon.png";
+export { default as YoutubeIcon } from "./youtube-icon.png";
+export { default as InstagramIcon } from "./instagram-icon.png";
+export { default as ChangeIcon } from "./change-icon.png";
