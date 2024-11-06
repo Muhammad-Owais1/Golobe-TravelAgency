@@ -1,0 +1,126 @@
+
+
+{
+    "stays": [
+      
+        {"destination": "Istanbul, Turkey",  "hotel": "Lookit Hotel",   "price": "$1,200"},
+        {"destination": "Istanbul, Turkey",  "hotel": "Shaft Hotel",   "price": "$1,150"},
+        {"destination": "Istanbul, Turkey",  "hotel": "Baskete Hotel",   "price": "$1,300"},
+      
+
+
+
+
+
+
+    
+        {"destination": "Sydney, Australia",  "hotel": "Dashek Hotel",   "price": "$150"},
+        {"destination": "Sydney, Australia",  "hotel": "Shaft Hotel",   "price": "$180"}
+      ,
+      
+
+      
+      
+      
+        {"destination": "Baku, Azerbaijan",  "hotel": "Lookit Hotel",   "price": "$800"},
+        {"destination": "Baku, Azerbaijan",  "hotel": "Baskete Hotel",   "price": "$850"}
+      ,
+      
+    
+
+
+
+
+
+      
+        {"destination": "Malé, Maldives",  "hotel": "Shaft Hotel",   "price": "$900"},
+        {"destination": "Malé, Maldives",  "hotel": "Baskete Hotel",   "price": "$950"}
+      ,
+      
+       
+
+
+
+
+      
+       
+      
+        {"destination": "Paris, France",  "hotel": "Lookit Hotel",   "price": "$300"},
+        {"destination": "Paris, France",  "hotel": "Dashek Hotel",   "price": "$290"},
+        {"destination": "Paris, France",  "hotel": "Shaft Hotel",   "price": "$310"}
+      ,
+      
+
+
+
+
+
+       
+      
+        {"destination": "NewYork, US",  "hotel": "Baskete Hotel",   "price": "$1,000"},
+        {"destination": "NewYork, US",  "hotel": "Lookit Hotel",   "price": "$1,050"},
+        {"destination": "NewYork, US",  "hotel": "Shaft Hotel",   "price": "$1,100"},
+       
+      
+  
+   
+      
+        {"destination": "London, UK",  "hotel": "Dashek Hotel",   "price": "$200"},
+        {"destination": "London, UK",  "hotel": "Lookit Hotel",   "price": "$220"},
+        {"destination": "London, UK",  "hotel": "Shaft Hotel",   "price": "$210"},
+       
+      
+
+
+
+
+
+
+      
+      
+      
+        {"destination": "Tokyo, Japan",  "hotel": "Baskete Hotel",   "price": "$1,000"},
+        {"destination": "Tokyo, Japan",  "hotel": "Lookit Hotel",   "price": "$1,050"},
+        {"destination": "Tokyo, Japan",  "hotel": "Shaft Hotel",   "price": "$1,100"},
+       
+   
+
+
+
+
+
+      
+        
+      
+        {"destination": "Dubai, UAE",  "hotel": "Lookit Hotel",   "price": "$850"},
+        {"destination": "Dubai, UAE",  "hotel": "Dashek Hotel",   "price": "$830"},
+       
+
+
+
+
+
+     
+      
+
+       
+      
+        {"destination": "Karachi, Pakistan",  "hotel": "Dashek Hotel",   "price": "$200"},
+        {"destination": "Karachi, Pakistan",  "hotel": "Lookit Hotel",   "price": "$220"},
+        {"destination": "Karachi, Pakistan",  "hotel": "Shaft Hotel",   "price": "$210"},
+       
+    
+
+
+    
+           
+          
+            {"destination": "Colombo, SriLanka",  "hotel": "Lookit Hotel",   "price": "$150"},
+            {"destination": "Colombo, SriLanka",  "hotel": "Baskete Hotel",   "price": "$140"}
+           
+        ]
+      }
+      
+    
+  
+  

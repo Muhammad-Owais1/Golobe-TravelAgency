@@ -44,3 +44,32 @@ html {
 body {
     background-color: #f1f5f9;
 }
+
+/* Remove default select arrow */
+select {
+    -webkit-appearance: none;  /* For Chrome */
+    -moz-appearance: none;     /* For Firefox */
+    appearance: none;          /* Remove default appearance */
+    background: none;          /* Remove default background (including the arrow) */
+    padding: 10px;             /* Padding for better look */
+    font-size: 16px;           /* Adjust font size */
+    border: 1px solid #ccc;    /* Add a border */
+    border-radius: 5px;        /* Rounded corners */
+    width: 200px;              /* Adjust the width */
+    height: 40px;              /* Adjust the height */
+    background-color: #fff;    /* White background */
+    padding-right: 20px;       /* Space for the custom arrow */
+    position: relative;        /* Necessary for custom arrow placement */
+    cursor: pointer;           /* Show pointer on hover */
+}
+
+/* Optional: Adding a custom arrow */
+select::after {
+    content: "▼";              /* Custom arrow symbol */
+    font-size: 12px;           /* Size of the arrow */
+    position: absolute;        /* Positioning it inside the select box */
+    right: 10px;               /* Place the arrow to the right */
+    top: 50%;                  /* Align vertically */
+    transform: translateY(-50%); /* Vertically center the arrow */
+    pointer-events: none;      /* Ensure the arrow is not clickable */
+}

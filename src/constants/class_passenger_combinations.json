@@ -1,0 +1,16 @@
+{
+    "passengerClassOptions": [
+      { "value": "economy_1", "label": "Economy - 1 Passenger" },
+      { "value": "economy_2", "label": "Economy - 2 Passengers" },
+      { "value": "economy_3", "label": "Economy - 3 Passengers" },
+      
+      { "value": "business_1", "label": "Business - 1 Passenger" },
+      { "value": "business_2", "label": "Business - 2 Passengers" },
+      { "value": "business_3", "label": "Business - 3 Passengers" },
+      
+      { "value": "first_class_1", "label": "First Class - 1 Passenger" },
+      { "value": "first_class_2", "label": "First Class - 2 Passengers" },
+      { "value": "first_class_3", "label": "First Class - 3 Passengers" }
+    ]
+  }
+  

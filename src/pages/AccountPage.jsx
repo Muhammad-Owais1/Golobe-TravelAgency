@@ -19,7 +19,16 @@ export default function AccountPage() {
           alt=""
         />
         <div className="absolute left-[50%] translate-x-[-50%] top-[40%] flex flex-col items-center justify-center">
-          <div className="w-52 aspect-square bg-black rounded-full flex items-center justify-center overflow-hidden"></div>
+          <div className="w-52 aspect-square bg-black rounded-full flex items-center justify-center overflow-hidden">
+            {user?.photoURL ? (
+              <img src={user.photoURL} alt="Profile" className="w-full" />
+            ) : (
+              <img
+                className="w-full"
+                src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+              />
+            )}
+          </div>
           <h1 className="text-[24px] font-semibold capitalize">
             {user?.displayName}.
           </h1>
@@ -27,7 +36,7 @@ export default function AccountPage() {
         </div>
       </section>
       <section className="font-['Montserrat'] flex flex-col items-center justify-center gap-[16px]">
-        <div className="flex items-center justify-center max-w-[1136px] w-[90vw] h-[80px] bg-white rounded-md font-semibold">
+        <div className="flex items-center justify-center max-w-[1136px] w-[90vw] h-[80px] bg-white text-xs sm:text-lg rounded-md font-semibold">
           <div
             onClick={() => setActiveSection("account")}
             className={`cursor-pointer w-full h-[80px] flex items-center justify-center box-border ${
@@ -49,7 +58,7 @@ export default function AccountPage() {
             <div
               className={`w-full text-center border-l-[1px] border-r-[1px] border-l-black border-r-black `}
             >
-              Tickets/Bookings
+              Bookings
             </div>
           </div>
           <div

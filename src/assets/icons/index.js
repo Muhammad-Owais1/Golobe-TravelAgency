@@ -8,3 +8,5 @@ export { default as TwitterIcon } from "./twitter-icon.png";
 export { default as YoutubeIcon } from "./youtube-icon.png";
 export { default as InstagramIcon } from "./instagram-icon.png";
 export { default as ChangeIcon } from "./change-icon.png";
+export { default as LocationIcon } from "./location-icon.png";
+export { default as ClockIcon } from "./clock-icon.png";

@@ -10,11 +10,21 @@ import AccountPage from "./pages/AccountPage";
 import { useState } from "react";
 import { auth } from "./firebase/firebase";
 import AuthProvider from "./context/AuthContext/AuthProvider";
+import { useContext } from "react";
+import { AuthContext } from "./context/context";
+import FlightsListPage from "./pages/FlightsListPage";
+import FlightDetailsPage from "./pages/FlightDetailsPage";
+import FlightBookingPage from "./pages/FlightBookingPage";
+import StaysListPage from "./pages/StaysListPage";
+import StayDetailsPage from "./pages/StayDetailsPage";
+import StayBookingPage from "./pages/StayBookingPage";
 
 function MiniApp() {
   const location = useLocation();
 
   const isAuthPage = location.pathname.startsWith("/auth");
+
+  const { user } = useContext(AuthContext);
 
   return (
     <>
@@ -29,9 +39,21 @@ function MiniApp() {
         ) : (
           <>
             <Route path="/" element={<HomePage />} />
-            <Route path="/flights" element={<FlightPage />} />
             <Route path="/stays" element={<StayPage />} />
-            <Route path="/account" element={<AccountPage />} />
+            <Route path="/stays/stays_list" element={<StaysListPage />} />
+            <Route path="/stays/stay/:id" element={<StayDetailsPage />} />
+            <Route
+              path="/stays/stay/booking/:id"
+              element={<StayBookingPage />}
+            />
+            <Route path="/flights" element={<FlightPage />} />
+            <Route path="/flights/flights_list" element={<FlightsListPage />} />
+            <Route path="/flights/flight/:id" element={<FlightDetailsPage />} />
+            <Route
+              path="/flights/flight/booking/:id"
+              element={<FlightBookingPage />}
+            />
+            {user && <Route path="/account" element={<AccountPage />} />}
           </>
         )}
       </Routes>

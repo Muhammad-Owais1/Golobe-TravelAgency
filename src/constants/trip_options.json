@@ -1,0 +1,8 @@
+{
+    "tripOptions": [
+      { "value": "return", "label": "Return" },
+      { "value": "oneway", "label": "One-way" },
+      { "value": "multicity", "label": "Multi-city" }
+    ]
+}
+  

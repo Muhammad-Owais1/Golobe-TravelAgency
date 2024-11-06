@@ -8,10 +8,12 @@ import { useLocation, Link, NavLink } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { AuthContext } from "../context/context";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
   const location = useLocation();
-  console.log(location);
 
   const [iconColor, setIconColor] = useState("");
   const [textColor, setTextColor] = useState("");
@@ -46,6 +48,7 @@ export default function Navbar() {
 
   const handleLogout = () => {
     signOut(auth);
+    navigate("/");
   };
 
   return (
@@ -105,7 +108,9 @@ export default function Navbar() {
                 className="flex items-center justify-center gap-2"
                 to="/account"
               >
-                <div className="flex items-center justify-center aspect-square overflow-hidden w-[30px] rounded-full bg-black"></div>
+                <div className="flex items-center justify-center aspect-square overflow-hidden w-[30px] rounded-full bg-black">
+                  <img src={user.photoURL} alt="" />
+                </div>
                 <p className="capitalize whitespace-nowrap">
                   {user.displayName}
                 </p>
@@ -178,7 +183,17 @@ export default function Navbar() {
                     className="flex items-center justify-center gap-2"
                     to="/account"
                   >
-                    <div className="flex items-center justify-center aspect-square overflow-hidden w-[30px] rounded-full bg-black"></div>
+                    {user?.photoURL ? (
+                      <div className="flex items-center justify-center aspect-square overflow-hidden w-[30px] rounded-full bg-black">
+                        <img src={user.photoURL} alt="" />
+                      </div>
+                    ) : (
+                      <img
+                        className="w-[30px]"
+                        src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                      />
+                    )}
+
                     <p className="capitalize whitespace-nowrap">
                       {user.displayName}
                     </p>

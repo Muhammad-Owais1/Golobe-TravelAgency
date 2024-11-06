@@ -3,13 +3,13 @@ import CustomModal from "./CustomModal";
 import CustomButton from "./CustomButton";
 import { AuthContext } from "../context/context";
 import { ChangeIcon } from "../assets/icons";
-import { storage, db } from "../firebase/firebase";
+import { storage } from "../firebase/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { doc, setDoc } from "firebase/firestore";
+import { updateProfile } from "firebase/auth";
 
 export default function EditProfileImg() {
   const { user, setUser } = useContext(AuthContext);
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState(null);
   const [isModalActive, setIsModalActive] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
 
@@ -22,37 +22,28 @@ export default function EditProfileImg() {
 
   const editIcon = async () => {
     if (file) {
-      setIsUploading(true); // Optional: Set uploading state
+      setIsUploading(true);
 
       try {
-        // Create a storage reference for the user's profile image
-        const storageRef = ref(storage, `profileImages/${user.uid}`);
-
-        // Upload the file to Firebase Storage
-        await uploadBytes(storageRef, file);
-
-        // Get the image download URL from Firebase Storage
-        const downloadURL = await getDownloadURL(storageRef);
-
-        // Create a reference to the user document
-        const userDocRef = doc(db, "users", user.uid);
-
-        // Use setDoc to create the document if it doesn't exist, or update it if it does
-        await setDoc(
-          userDocRef,
-          { profileImageUrl: downloadURL },
-          { merge: true }
+        const storageRef = ref(
+          storage,
+          `profileImages/${user.uid}/${file.name}`
         );
 
-        // Update local user state with the new image URL
-        setUser({ ...user, profileImageUrl: downloadURL });
+        await uploadBytes(storageRef, file);
 
-        // Close the modal
+        const downloadURL = await getDownloadURL(storageRef);
+
+        await updateProfile(user, {
+          photoURL: downloadURL,
+        });
+
+        setUser({ ...user, photoURL: downloadURL });
         setIsModalActive(false);
       } catch (error) {
         console.error("Error updating profile image:", error);
       } finally {
-        setIsUploading(false); // Optional: Clear uploading state
+        setIsUploading(false);
       }
     }
   };
@@ -62,16 +53,14 @@ export default function EditProfileImg() {
       <div className="flex justify-between items-center w-full">
         <div className="h-[52px] flex flex-col justify-between">
           <h1 className="text-[14px]">Profile Image</h1>
-          {/* Display user's profile image if available */}
-          <div className="h-[52px] w-[52px] overflow-hidden rounded-full bg-black">
-            {user?.profileImageUrl ? (
-              <img
-                src={user.profileImageUrl}
-                alt="Profile"
-                className="h-full w-full object-cover"
-              />
+          <div className="h-[30px] w-[30px] overflow-hidden rounded-full bg-black flex items-center justify-center">
+            {user?.photoURL ? (
+              <img src={user.photoURL} alt="Profile" className="w-[30px]" />
             ) : (
-              <span>No Image</span>
+              <img
+                className="w-[30px]"
+                src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+              />
             )}
           </div>
         </div>
